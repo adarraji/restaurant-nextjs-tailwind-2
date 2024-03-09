@@ -1,0 +1,13 @@
+.menu {    
+}
+
+
+.cart_open_image {
+    @apply w-full h-auto
+}
+
+
+.links {
+    @apply bg-red-500 text-white absolute left-0 top-24 w-full h-[calc(100vh-6rem)] z-10;
+    @apply flex flex-col gap-8 justify-center items-center text-3xl; 
+}

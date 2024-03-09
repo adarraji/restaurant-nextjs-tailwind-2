@@ -1,0 +1,11 @@
+.container {
+    @apply flex items-center gap-4;
+}
+
+.image_container {
+    @apply relative w-8 h-8;  
+}
+
+
+
+

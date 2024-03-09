@@ -1,0 +1,11 @@
+.navbar {
+    @apply border-b-2 border-b-red-500 h-12 text-red-500 p-4 flex justify-between items-center uppercase;
+}
+
+.logo {
+    @apply text-xl;
+}
+
+.menu {
+    
+}
