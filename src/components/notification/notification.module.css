@@ -1,0 +1,4 @@
+.notification {
+    @apply h-12 bg-red-500 text-white px-4 text-center text-sm flex items-center justify-center cursor-pointer;
+    @apply md:text-base ;
+}
