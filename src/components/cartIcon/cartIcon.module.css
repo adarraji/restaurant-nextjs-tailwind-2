@@ -4,6 +4,7 @@
 
 .image_container {
     @apply relative w-8 h-8;  
+    @apply  md:w-5 md:h-5;  
 }
 
 
