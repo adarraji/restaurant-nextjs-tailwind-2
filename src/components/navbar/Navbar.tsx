@@ -7,6 +7,13 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
 
+      {/* LINKS */}
+      <div className={styles.links}>
+        <Link href="/">Homepage</Link>
+        <Link href="/menu">Menu</Link>
+        <Link href="/contact">Contact</Link>
+      </div>
+
       {/* LOGO */}
       <div className={styles.logo}>
         <Link href="/">
@@ -14,10 +21,11 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* MENU */}
-      <div className={styles.logo}>
+      {/* MENU FOR SMALL SCREEN*/}
+      <div className={styles.menu}>
         <Menu />
       </div>
+
     </div>
   )
 }

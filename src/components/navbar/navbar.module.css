@@ -6,3 +6,10 @@
     @apply text-xl;
 }
 
+.links {
+  @apply hidden md:flex gap-4;
+}
+
+.menu {
+    @apply md:hidden;
+}
