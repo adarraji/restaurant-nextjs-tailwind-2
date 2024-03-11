@@ -1,0 +1,10 @@
+.container {
+    @apply h-12 text-red-500 flex items-center justify-between p-4 uppercase;
+    @apply md:h-24 ;
+    @apply lg:p-20 ;
+    @apply xl:p-40 ;
+}
+
+.link {
+    @apply font-bold  text-xl;
+}

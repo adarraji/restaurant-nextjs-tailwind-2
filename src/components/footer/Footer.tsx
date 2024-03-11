@@ -1,8 +1,12 @@
-import React from 'react'
+import Link from "next/link"
+import styles from "./footer.module.css"
 
 const Footer = () => {
     return (
-        <div>Footer</div>
+        <div className={styles.container}>
+            <Link href="/" className={styles.link}>Bistro Pro</Link>
+            <p>ALL RIGHTS RESERVED.</p>
+        </div>
     )
 }
 
