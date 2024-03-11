@@ -1,6 +1,8 @@
 .navbar {
     @apply border-b-2 border-b-red-500 h-12 text-red-500 p-4 flex justify-between items-center uppercase;
-    @apply md:h-24
+    @apply md:h-24;
+    @apply lg:px-20;
+    @apply xl:px-40;
 }
 
 .logo {
