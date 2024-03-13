@@ -17,7 +17,7 @@ const Featured = () => {
             {/* IMAGE CONTAINER */}
             {item.img && (
               <div className={s.image_container}>
-                <Image src={item.img} alt="" fill sizes="(max-width: 640px) 100vw, 100vw"/>
+                <Image src={item.img} alt="" fill sizes="100vw, 100vw" />
               </div>
             )}
 
