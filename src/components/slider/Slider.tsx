@@ -22,16 +22,16 @@ const data = [
 ];
 
 const Slider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(2)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => prev === data.length - 1 ? 0 : prev + 1)
-    }, 3000)
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide(prev => prev === data.length - 1 ? 0 : prev + 1)
+  //   }, 3000)
 
-    return () => clearInterval(interval)
+  //   return () => clearInterval(interval)
 
-  }, [])
+  // }, [])
 
 
 
@@ -46,7 +46,7 @@ const Slider = () => {
 
       {/* IMAGE CONTAINER */}
       <div className={s.image_container}>
-        <Image src={data[currentSlide].image} alt="" fill />
+        <Image src={data[currentSlide].image} alt="" fill priority sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"/>
       </div>
 
 

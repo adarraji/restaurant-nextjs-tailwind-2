@@ -1,15 +1,17 @@
 .slider_container {
     @apply flex flex-col h-[calc(100vh-6rem)];    
     @apply md:h-[calc(100vh-9rem)];
+    @apply lg:flex-row;
 }
 
 .text_container {
-    @apply h-1/2 flex items-center justify-center flex-col gap-8 text-red-500 font-bold;
+    @apply flex-1 flex items-center justify-center flex-col gap-8 text-red-500 font-bold bg-fuchsia-50;
+   
 }
 
 .text_container > h1 {
     @apply text-5xl text-center uppercase p-4;
-    @apply md:text-6xl;
+    @apply md:text-6xl md:p-10;
     @apply xl:text-7xl;
 }
 
@@ -18,7 +20,8 @@
 }
 
 .image_container {
-    @apply relative w-full h-1/2;
+    @apply flex-1 relative w-full ;
+
 }
 
 .image_container > img {
