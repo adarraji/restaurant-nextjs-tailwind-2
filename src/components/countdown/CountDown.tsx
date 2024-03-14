@@ -1,11 +1,22 @@
-import s from "./countDown.module.css"
+"use client"
+import { useEffect, useState } from "react";
+import s from "./countDown.module.css";
+import Countdown from "react-countdown";
 
 const CountDown = () => {
-  return (
-    <span className={s.countDown}>
-        12:23:45:67
-    </span>
-  )
-}
+    const [isClient, setIsClient] = useState(false);
 
-export default CountDown
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    const endDate = new Date("2024-07-25");
+
+    return (
+        <div className={s.countDown}>
+            {isClient && <Countdown date={endDate} />}
+        </div>
+    );
+};
+
+export default CountDown;
