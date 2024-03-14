@@ -18,9 +18,6 @@
     @apply xl:text-xl;
 }
 
-.text_container>span {
-    @apply text-yellow-400;
-}
 
 .text_container>button {
     @apply text-white bg-red-500 px-6 py-3 rounded-md;

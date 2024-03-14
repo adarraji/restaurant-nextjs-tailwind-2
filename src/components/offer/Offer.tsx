@@ -1,5 +1,6 @@
 import Image from "next/image"
 import s from "./offer.module.css"
+import CountDown from "../countdown/CountDown"
 
 const Offer = () => {
   return (
@@ -9,7 +10,7 @@ const Offer = () => {
       <div className={s.text_container}>
         <h1>Delicious Burger & French Fries</h1>
         <p> Progressively simplify effective e-toilers and process-centric methods of empowerment. Quickly pontificate parallel.</p>
-        <span>Countdown</span>
+        <CountDown/>
         <button>Order Now</button>
       </div>
 
