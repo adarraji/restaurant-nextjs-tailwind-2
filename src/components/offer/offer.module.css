@@ -1,0 +1,39 @@
+.container {
+    @apply flex flex-col h-screen bg-black;
+    @apply md:flex-row;
+}
+
+.text_container {
+    @apply flex-1 flex flex-col justify-center items-center gap-8 p-6 text-center;
+}
+
+.text_container>h1 {
+    @apply text-white text-5xl font-bold ;
+    @apply xl:text-6xl;
+
+}
+
+.text_container>p {
+    @apply text-white;
+    @apply xl:text-xl;
+}
+
+.text_container>span {
+    @apply text-yellow-400;
+}
+
+.text_container>button {
+    @apply text-white bg-red-500 px-6 py-3 rounded-md;
+}
+
+
+
+
+
+.image_container {
+    @apply relative flex-1 w-full;
+}
+
+.image_container>img {
+    @apply object-contain;
+}
