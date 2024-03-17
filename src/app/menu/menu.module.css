@@ -1,0 +1,21 @@
+.container {
+    @apply p-4 h-[calc(100vh-6rem)] flex flex-col items-center;
+    @apply md:h-[calc(100vh-9rem)] md:flex-row;
+    @apply lg:px-40
+}
+
+.link {
+    @apply w-full h-1/3 p-8 bg-cover;
+    @apply md:h-1/2;
+}
+
+
+
+.header {
+    @apply uppercase font-bold text-3xl;
+}
+
+.desc {
+    @apply text-sm my-8;
+}
+
