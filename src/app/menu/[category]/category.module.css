@@ -1,0 +1,34 @@
+.container {
+    @apply h-[calc(100vh-6rem)] flex flex-wrap text-red-500;
+    @apply md:h-[calc(100vh-9rem)] ;    
+}
+
+.link{
+    @apply w-full h-[60vh] border-r-2 border-b-2 border-red-500 p-4 flex flex-col justify-between ;
+    @apply sm:w-1/2;
+    @apply lg:w-1/3 ;
+}
+
+.image_container {
+    @apply relative h-[80%];
+}
+
+.image_container>img {
+    @apply object-contain;
+}
+
+.text_container {
+    @apply flex items-center justify-between font-bold;
+}
+
+.text_container>h1 {
+    @apply text-2xl uppercase p-2;
+}
+
+.text_container>h2 {
+    @apply text-xl ;
+}
+
+.text_container>button {
+    @apply  uppercase bg-red-500 text-white p-2 rounded-md;
+}
