@@ -8,7 +8,7 @@ const CategoryPage = () => {
         <div className={s.container}>
             {
                 pizzas.map(item => (
-                    <Link href={`/product/${item.id}`} className={`${s.link}  group odd:bg-fuchsia-50`}>
+                    <Link href={`/product/${item.id}`} key={item.id} className={`${s.link}  group odd:bg-fuchsia-50`} >
                         {
                             item.img
                             && <div className={s.image_container}>
