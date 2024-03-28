@@ -1,0 +1,44 @@
+.container {
+    @apply flex flex-col gap-4;
+}
+
+.container>h2 {
+    @apply text-2xl font-bold;
+}
+
+
+.options_container {
+    @apply flex gap-4;
+}
+
+.options_container>button {
+    @apply min-w-[6rem] p-2 ring-1 ring-red-500 rounded-md;
+}
+
+
+
+.qunatitiy_addButton_container {
+    @apply flex justify-between items-center;
+}
+
+
+.qunatitiy_container {
+    @apply flex justify-between w-full p-3 ring-1 ring-red-500;
+}
+
+.qunatitiy_container>div {
+    @apply flex gap-4 items-center;
+}
+
+.qunatitiy_addButton_container>button {
+    @apply uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500;
+}
+
+
+
+
+
+
+
+
+.qunatitiy_addButton_container>button {}
