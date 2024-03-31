@@ -12,3 +12,27 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Category {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  title     String
+  desc      String
+  color     String
+  img       String
+  slug      String    @unique
+  Products   Product[]
+}
+
+model Product {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  title      String
+  desc       String
+  img        String
+  price      Decimal
+  isFeatured Boolean  @default(false)
+  options    Json[]
+  category   Category @relation(fields: [catSlug], references: [slug])
+  catSlug String
+}
