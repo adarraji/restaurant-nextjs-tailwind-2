@@ -21,7 +21,7 @@ model Category {
   color     String
   img       String
   slug      String    @unique
-  Products   Product[]
+  Products  Product[]
 }
 
 model Product {
@@ -29,10 +29,19 @@ model Product {
   createdAt  DateTime @default(now())
   title      String
   desc       String
-  img        String
+  img        String?
   price      Decimal
   isFeatured Boolean  @default(false)
   options    Json[]
   category   Category @relation(fields: [catSlug], references: [slug])
-  catSlug String
+  catSlug    String
+}
+
+model Order {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  Price     Decimal
+  products  Json[]
+  status    String
+  intent_id String?  @unique
 }
