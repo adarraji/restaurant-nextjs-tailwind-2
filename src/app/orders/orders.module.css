@@ -1,0 +1,40 @@
+.container {
+    @apply p-4 lg:px-20 xl:px-40;
+}
+
+.container>table {
+    @apply w-full border-separate border-spacing-3;
+}
+
+.container>table>thead>tr {
+    @apply text-left;
+}
+
+.container>table>thead>tr>th:nth-of-type(1) {
+    @apply hidden md:block;
+}
+
+.container>table>thead>tr>th:nth-of-type(4) {
+    @apply hidden md:block;
+}
+
+
+
+
+.container>table>tbody>tr {
+    @apply text-sm md:text-base;
+}
+
+
+.container>table>tbody>tr>td {
+    @apply py-6 px-1;
+}
+
+
+.container>table>tbody>tr>td:nth-of-type(1) {
+    @apply hidden md:block;
+}
+
+.container>table>tbody>tr>td:nth-of-type(4) {
+    @apply hidden md:block;
+}
