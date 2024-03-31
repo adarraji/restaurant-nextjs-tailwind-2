@@ -1,9 +1,18 @@
-import { menu } from "@/data"
+import { MenuType } from "@/types/types"
 import s from "./menu.module.css"
 import Link from "next/link"
 
+const getData = async () => {
+    const res = await fetch(`${process.env.NEXT_SERVER_URL}/api/categories`, { cache: "no-store" })
+    if (!res.ok) {
+        throw new Error("Failed!")
+    }
+    return res.json()
+}
 
-const MenuPage = () => {
+const MenuPage = async () => {
+    const menu: MenuType = await getData()
+    console.log(menu)
     return (
         <div className={s.container}>
             {menu.map(category => (
