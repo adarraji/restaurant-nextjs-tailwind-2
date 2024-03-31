@@ -11,8 +11,7 @@ const getData = async () => {
 }
 
 const MenuPage = async () => {
-    const menu: MenuType = await getData()
-    console.log(menu)
+    const menu: MenuType = await getData()    
     return (
         <div className={s.container}>
             {menu.map(category => (
