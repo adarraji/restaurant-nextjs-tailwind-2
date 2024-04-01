@@ -1,5 +1,6 @@
 import Image from "next/image"
 import s from "./featured.module.css"
+import { ProductType } from "@/types/types"
 
 
 
@@ -13,7 +14,7 @@ const getData = async () => {
 
 const Featured = async () => {
 
-  const featuredProducts = await getData()
+  const featuredProducts: ProductType[] = await getData()
 
   return (
     <div className={s.container}>
