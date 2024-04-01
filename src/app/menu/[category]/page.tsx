@@ -22,7 +22,7 @@ type CategoryPageProps = {
 
 const CategoryPage = async ({ params }: CategoryPageProps) => {
 
-    const products: ProductType = await getData(params.category)
+    const products: ProductType[] = await getData(params.category)
 
     return (
         <div className={s.container}>
