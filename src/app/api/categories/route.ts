@@ -1,5 +1,5 @@
 
-import prisma from "@/app/menu/utils/connect"
+import prisma from "@/utils/connect"
 import { NextResponse } from "next/server"
 
 // FETCH ALL CATEGORIES

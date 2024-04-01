@@ -1,13 +1,33 @@
 import Link from "next/link"
 import s from "./category.module.css"
-import { pizzas } from "@/data"
 import Image from "next/image"
+import { ProductType } from "@/types/types"
 
-const CategoryPage = () => {
+
+
+const getData = async (category: string) => {
+    const res = await fetch(`${process.env.NEXT_SERVER_URL}/api/products?cat=${category}`, { cache: "no-store" })
+    if (!res.ok) {
+        throw new Error("Failed!")
+    }
+    return res.json()
+}
+
+
+type CategoryPageProps = {
+    params: {
+        category: string
+    }
+}
+
+const CategoryPage = async ({ params }: CategoryPageProps) => {
+
+    const products: ProductType = await getData(params.category)
+
     return (
         <div className={s.container}>
             {
-                pizzas.map(item => (
+                products.map(item => (
                     <Link href={`/product/${item.id}`} key={item.id} className={`${s.link}  group odd:bg-fuchsia-50`} >
                         {
                             item.img

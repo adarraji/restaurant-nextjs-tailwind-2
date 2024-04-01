@@ -1,8 +1,20 @@
 import Image from "next/image"
 import s from "./featured.module.css"
-import { featuredProducts } from "@/data"
 
-const Featured = () => {
+
+
+const getData = async () => {
+  const res = await fetch(`${process.env.NEXT_SERVER_URL}/api/products`, { cache: "no-store" })
+  if (!res.ok) {
+    throw new Error("Failed!")
+  }
+  return res.json()
+}
+
+const Featured = async () => {
+
+  const featuredProducts = await getData()
+
   return (
     <div className={s.container}>
 
