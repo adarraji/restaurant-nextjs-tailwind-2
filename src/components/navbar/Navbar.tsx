@@ -4,11 +4,11 @@ import Menu from "../menu/Menu"
 import styles from "./navbar.module.css"
 import CartIcon from "../cartIcon/CartIcon"
 import Image from "next/image"
+import UserLinks from "../userLinks/UserLinks"
 
 const Navbar = () => {
 
-  // TEMPORARY
-  const user = false
+  
 
   return (
     <div className={styles.navbar}>
@@ -38,7 +38,7 @@ const Navbar = () => {
           <Image src="/phone.png" alt="" width={20} height={20} />
           <span>123 456 789</span>
         </div>
-        {!user ? <Link href="/login">Login</Link> : <Link href="/orders">Orders</Link>}
+       <UserLinks/>
         <Link href="/cart">
           <CartIcon />
         </Link>
