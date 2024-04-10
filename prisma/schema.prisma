@@ -68,7 +68,7 @@ model Category {
   color     String
   img       String
   slug      String    @unique
-  Products  Product[]
+  products  Product[]
 }
 
 model Product {
@@ -87,7 +87,7 @@ model Product {
 model Order {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
-  Price     Decimal
+  price     Decimal
   products  Json[]
   status    String
   intent_id String?  @unique
