@@ -38,3 +38,15 @@
 .container>table>tbody>tr>td:nth-of-type(4) {
     @apply hidden md:block;
 }
+
+.admin_form {
+    @apply flex justify-center items-center gap-4;
+}
+
+.admin_form > input {
+    @apply p-2 ring-1 ring-red-100 rounded-md ;
+}
+
+.admin_form > button {
+    @apply bg-red-500 p-2 rounded-full ;
+}
