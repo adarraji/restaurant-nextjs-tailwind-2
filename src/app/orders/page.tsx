@@ -26,7 +26,7 @@ const OrdersPage = () => {
 
   const queryClient = useQueryClient()
   const mutation = useMutation({
-    mutationFn: ({ id, status }: { id: String, status: String }) => {
+    mutationFn: ({ id, status }: { id: string, status: string }) => {
       return fetch(`/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ const OrdersPage = () => {
     }
   })
 
-  const handleUpdate = (e: React.FormEvent<HTMLFormElement>, id: String) => {
+  const handleUpdate = (e: React.FormEvent<HTMLFormElement>, id: string) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement
     const input = form.elements[0] as HTMLInputElement
