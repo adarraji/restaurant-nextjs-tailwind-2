@@ -1,14 +1,17 @@
 "use client"
 import { useEffect, useState } from "react";
 import s from "./price.module.css"
+import { ProductType } from "@/types/types";
 
 type PriceProps = {
-    id: number;
+    id: string;
     price: number;
     options?: { title: string; additionalPrice: number }[];
 }
 
-const Price = ({ id, price, options }: PriceProps) => {
+const Price = ({ product }: { product: ProductType }) => {
+
+    const { id, price, options } = product
 
     const [total, setTotal] = useState(price)
     const [quantity, setQuantitiy] = useState(1)
@@ -17,19 +20,19 @@ const Price = ({ id, price, options }: PriceProps) => {
 
     useEffect(() => {
         setTotal(
-            quantity * (options ? price + options[selected].additionalPrice : price)
+            quantity * (options?.length ? Number(price) + Number(options[selected].additionalPrice) : price)
         );
     }, [quantity, selected, options, price]);
 
 
     return (
         <div className={s.container}>
-            <h2>${total.toFixed(2)}</h2>
+            <h2>${total}</h2>
 
             {/* OPTIONS CONTAINER */}
             <div className={s.options_container}>
                 {
-                    options?.map((option, index) => (
+                    options?.length && options?.map((option, index) => (
                         <button
                             key={option.title}
                             style={{
