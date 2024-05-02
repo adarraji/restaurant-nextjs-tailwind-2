@@ -2,16 +2,14 @@
 import { useEffect, useState } from "react";
 import s from "./price.module.css"
 import { ProductType } from "@/types/types";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/cart/cart.reducer";
 
-type PriceProps = {
-    id: string;
-    price: number;
-    options?: { title: string; additionalPrice: number }[];
-}
 
 const Price = ({ product }: { product: ProductType }) => {
+    const dispatch = useDispatch()
 
-    const { id, price, options } = product
+    const { price, options } = product
 
     const [total, setTotal] = useState(price)
     const [quantity, setQuantitiy] = useState(1)
@@ -24,6 +22,17 @@ const Price = ({ product }: { product: ProductType }) => {
         );
     }, [quantity, selected, options, price]);
 
+
+    const handleAddToCart = () => {
+        dispatch(addToCart({
+            id: product.id,
+            title: product.title,
+            img: product.img,
+            price: total,
+            ...(product.options?.length && { optionTitle: product.options[selected].title }),
+            quantity: quantity,
+        }))
+    }
 
     return (
         <div className={s.container}>
@@ -61,7 +70,7 @@ const Price = ({ product }: { product: ProductType }) => {
                 </div>
 
                 {/* CART BUTTON */}
-                <button>Add to Cart</button>
+                <button onClick={handleAddToCart}>Add to Cart</button>
 
             </div>
 

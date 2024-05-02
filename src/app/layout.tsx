@@ -8,6 +8,7 @@ import AuthProvider from "@/components/authProvider/AuthProvider"
 import QueryProvider from "@/components/queryProvider/QueryProvider"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import StoreProvider from "@/components/storeProvider/StoreProvider"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,15 +26,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          <QueryProvider>
-            <Notification />
-            <Navbar />
-            {children}
-            <Footer />
-            <ToastContainer position="bottom-right" theme="dark" autoClose={3000} />
-          </QueryProvider>
-        </AuthProvider>
+        
+        <StoreProvider >
+          <AuthProvider>
+            <QueryProvider>
+              <Notification />
+              <Navbar />
+              {children}
+              <Footer />
+              <ToastContainer position="bottom-right" theme="dark" autoClose={3000} />
+            </QueryProvider>
+          </AuthProvider>
+        </StoreProvider>
       </body>
     </html>
   )
