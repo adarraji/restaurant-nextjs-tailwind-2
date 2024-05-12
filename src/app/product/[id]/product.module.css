@@ -1,5 +1,5 @@
 .container {
-    @apply h-screen p-4 flex flex-col justify-around text-red-500;
+    @apply h-screen p-4 flex flex-col justify-around text-red-500 relative;
     @apply md:flex-row md:gap-8 md:items-center;
     @apply lg:px-20;
     @apply xl:px-40;

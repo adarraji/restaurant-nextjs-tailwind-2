@@ -1,0 +1,3 @@
+.container>button {
+    @apply bg-red-500 p-2 rounded-full absolute top-4 right-4;
+}
