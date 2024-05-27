@@ -2,15 +2,45 @@
 
 import Image from "next/image";
 import React from "react";
-import { selectProducts } from "@/store/cart/cart.selector";
+import { selectProducts, selectTotalItems, selectTotalPrice } from "@/store/cart/cart.selector";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "@/store/cart/cart.reducer";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const CartPage = () => {
   const products = useSelector(selectProducts)
+  const totalItems = useSelector(selectTotalItems)
+  const totalPrice = useSelector(selectTotalPrice)
   const dispatch = useDispatch()
-  console.log(products)
+  const { data: session } = useSession()
+  const router = useRouter()
+
+  const handleCheckout = async () => {
+    if (!session) {
+      router.push("/")
+    } else {
+      try {
+        const res = await fetch(`/api/orders`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            price: totalPrice,
+            products,
+            status: "Not Paid!",
+            userEmail: session.user.email
+          })
+        })
+        const data = await res.json()
+        router.push(`/payment/${data.id}`)
+
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+
   return (
     <div className="h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row">
       {/* PRODUCTS CONTAINER */}
@@ -50,7 +80,7 @@ const CartPage = () => {
           <span className="">TOTAL(INCL. VAT)</span>
           <span className="font-bold">$81.70</span>
         </div>
-        <button className="bg-red-500 text-white p-3 rounded-md w-1/2 self-end">
+        <button className="bg-red-500 text-white p-3 rounded-md w-1/2 self-end" onClick={handleCheckout}>
           CHECKOUT
         </button>
       </div>
