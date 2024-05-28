@@ -2,7 +2,7 @@
 
 Full stack Next.js Restaurant Application where users can order food. Home page has a slider that shows different items every 3 seconds, featured peoducts and offer section with a countdown. Menu page has categories.When users click any category, products list page shows up. Then the user clicks on a single product to open the single product page that displays the product details. Users can change the price using options. In the cart page users can see products and checkout details. You can change quantity, add to cart and complete the paymenty process. there is orders page that shows orders after sucessful payment and you can keep track of order status. If you are an admin you will see all orders, change order status, add/remove products and see the paymenys in Stripe account dashboard. It's fully repsonsive for different screen sizes. For example, if you reduce the screen size, you will see mobile menu, home page, category page, single product page and mobile cart page
 
-You can see the website [here](https://restaurant-nextjs-tailwind.vercel.app)
+You can see the website [here](https://restaurant-nextjs-tailwind-2.vercel.app/)
 
 To run the application
 
@@ -82,9 +82,9 @@ Also you need to add your server URI in Authorized JavaScript origins (for examp
 
 Next.js app is Deployed on [Vercel](https://vercel.com/)
 
-PostgreSQL DB is deployed on [Render](https://render.com)
+PostgreSQL DB is deployed on [Neon](https://neon.tech/)
 
-You can see the website [here](https://restaurant-nextjs-tailwind.vercel.app)
+You can see the website [here](https://restaurant-nextjs-tailwind-2.vercel.app/)
 
 
 <br />
